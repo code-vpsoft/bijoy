@@ -14,7 +14,7 @@ class BijoyServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        PresetCommand::macro('vpsoft', function($command) {
+        PresetCommand::macro('vpsoft-bijoy', function($command) {
             $command->info('Generating vposft preset...');
 
             Preset::install();
