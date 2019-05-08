@@ -1,0 +1,89 @@
+.tw-table {
+  @apply tw-w-full;
+
+  tbody,
+  tfoot {
+    tr {
+      @apply tw-border-t;
+    }
+  }
+
+  th,
+  td {
+    @apply tw-py-3 tw-px-3;
+  }
+}
+
+.tw-table-condensed {
+  th,
+  td {
+    @apply tw-py-2 tw-px-3;
+  }
+}
+
+.tw-table-bordered {
+  @apply tw-border;
+
+  th,
+  td {
+    @apply tw-border-r;
+
+    &:last-child {
+      @apply tw-border-r-0;
+    }
+  }
+}
+
+/* start: Color */
+.tw-table-stripped {
+  tbody tr {
+    &:nth-child(odd) {
+      @apply tw-bg-grey-lightest;
+    }
+  }
+}
+
+.tw-table-hovered {
+  thead,
+  tbody,
+  tfoot {
+    tr:hover {
+      @apply tw-bg-grey-lighter;
+    }
+  }
+}
+
+.tw-table-dark {
+  @apply tw-bg-grey-darkest tw-text-white tw-border-grey-dark;
+
+  thead,
+  tbody,
+  tfoot {
+    tr {
+      @apply tw-border-grey-dark;
+    }
+
+    th, td {
+      @apply tw-border-grey-dark;
+    }
+  }
+
+  &.tw-table-stripped {
+    tbody tr {
+      &:nth-child(odd) {
+        @apply tw-bg-grey-darker;
+      }
+    }
+  }
+
+  &.tw-table-hovered {
+    thead,
+    tbody,
+    tfoot {
+      tr:hover {
+        @apply tw-bg-black;
+      }
+    }
+  }
+}
+/* end: Color */

@@ -1,0 +1,7 @@
+.tw-sticky-top {
+  @apply tw-fixed tw-w-full tw-z-10;
+}
+
+.tw-sticky-screen {
+  @apply tw-w-screen tw-h-screen tw-fixed tw-pin-t tw-pin-l tw-z-50;
+}

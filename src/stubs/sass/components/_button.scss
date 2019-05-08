@@ -1,0 +1,162 @@
+.tw-btn {
+  @apply no-underline tw-cursor-pointer;
+
+  &:focus {
+    @apply tw-outline-none;
+  }
+}
+
+.tw-btn-disabled {
+  @apply tw-cursor-not-allowed tw-pointer-events-none tw-opacity-50;
+}
+
+/* start: Btn sizes */
+.tw-btn-sm {
+  @apply tw-py-1 tw-px-2 tw-text-sm;
+}
+
+.tw-btn-md {
+  @apply tw-py-2 tw-px-4;
+}
+
+.tw-btn-lg {
+  @apply tw-py-3 tw-px-6;
+}
+
+.tw-btn-xl {
+  @apply tw-px-8 tw-text-lg;
+
+  padding-top: 0.85rem;
+  padding-bottom: 0.85rem;
+}
+/* end: Btn sizes */
+
+@if($is-btn) {
+  @each $color in $colors {
+    /* start: Btn #{$color} */
+    .tw-btn-#{$color} {
+      @if($color != 'light' and $color != 'dark') {
+        @apply tw-bg-#{$color} tw-text-white;
+      }
+
+      @if($color == 'light') {
+        @apply tw-bg-white tw-border tw-text-grey-darker;
+      }
+
+      @if($color == 'dark') {
+        @apply tw-bg-black tw-text-white;
+      }
+
+      &:visited {
+        @if($color != 'light' and $color != 'dark') {
+          @apply tw-text-white;
+        }
+
+        @if($color == 'light') {
+          @apply tw-text-grey-darker;
+        }
+
+        @if($color == 'dark') {
+          @apply tw-text-white;
+        }
+      }
+
+      &:hover {
+        @if($color != 'light' and $color != 'dark') {
+          @apply tw-bg-#{$color}-dark tw-text-white;
+        }
+
+        @if($color == 'light') {
+          @apply tw-bg-grey-lighter tw-text-grey-darker;
+        }
+
+        @if($color == 'dark') {
+          @apply tw-bg-grey-darkest tw-text-white;
+        }
+      }
+
+      &:focus,
+      &:active {
+        @if($color != 'light' and $color != 'dark') {
+          @apply tw-bg-#{$color} tw-shadow-outline-#{$color} tw-text-white;
+        }
+
+        @if($color == 'light') {
+          @apply tw-bg-grey-lightest tw-text-grey-darker tw-shadow-outline-grey tw-border-grey;
+        }
+
+        @if($color == 'dark') {
+          @apply tw-bg-black tw-text-white tw-shadow-outline-grey;
+        }
+      }
+    }
+    /* end: Btn #{$color} */
+  }
+}
+
+@if($is-btn-o) {
+  .tw-btn-o {
+    @apply tw-bg-grey-lightest tw-text-grey-darker tw-border-2;
+  }
+
+  @each $color in $colors {
+    /* end: Btn #{$color} outline */
+    .tw-btn-#{$color}-o {
+      @if($color != 'light' and $color != 'dark') {
+        @apply tw-btn-o tw-border-#{$color};
+      }
+
+      @if($color == 'light') {
+        @apply tw-bg-white tw-text-grey-darkest tw-border-2 tw-border-grey-lighter;
+      }
+
+      @if($color == 'dark') {
+        @apply tw-btn-o tw-text-grey-darkest tw-border-black;
+      }
+
+      &:visited {
+        @if($color != 'light' and $color != 'dark') {
+          @apply tw-text-grey-darker;
+        }
+
+        @if($color == 'light') {
+          @apply tw-text-grey-darkest;
+        }
+
+        @if($color == 'dark') {
+          @apply tw-text-grey-darkest;
+        }
+      }
+
+      &:hover {
+        @if($color != 'light' and $color != 'dark') {
+          @apply tw-bg-#{$color} tw-text-white;
+        }
+
+        @if($color == 'light') {
+          @apply tw-bg-grey-lighter tw-text-grey-darkest;
+        }
+
+        @if($color == 'dark') {
+          @apply tw-bg-black tw-text-white;
+        }
+      }
+
+      &:focus,
+      &:active {
+        @if($color != 'light' and $color != 'dark') {
+          @apply tw-bg-#{$color} tw-shadow-outline-#{$color} tw-text-white;
+        }
+
+        @if($color == 'light') {
+          @apply tw-bg-grey-lighter tw-text-grey-darkest tw-border-grey tw-shadow-outline-grey;
+        }
+
+        @if($color == 'dark') {
+          @apply tw-bg-black tw-text-white tw-border-black tw-shadow-outline-grey;
+        }
+      }
+    }
+    /* end: Btn #{$color} outline */
+  }
+}

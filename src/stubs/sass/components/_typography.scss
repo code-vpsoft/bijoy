@@ -1,0 +1,54 @@
+* {
+  @apply tw-antialiased;
+
+  box-sizing: border-box;
+}
+
+[v-cloak] {
+  display: none;
+}
+
+html {
+  @apply tw-font-vollkorn tw-font-normal tw-text-base tw-text-black;
+
+  @include animation(tw-fade-in 400ms);
+}
+
+p {
+  @apply tw-mb-2;
+}
+
+a {
+  @apply tw-text-primary tw-no-underline;
+
+  &:visited {
+    @apply tw-text-primary-darker;
+  }
+
+  &:hover {
+    @apply tw-text-primary-dark;
+  }
+
+  &:focus,
+  &:active {
+    @apply outline-none tw-text-primary;
+  }
+}
+
+@each $color in $colors {
+  .visited\:tw-text-#{$color} {
+    &:visited {
+      @if($color != 'light' and $color != 'dark') {
+        @apply tw-text-#{$color};
+      }
+
+      @if($color == 'light') {
+        @apply tw-text-white;
+      }
+
+      @if($color == 'dark') {
+        @apply tw-text-black;
+      }
+    }
+  }
+}

@@ -1,0 +1,26 @@
+.tw-badge {
+  padding: .15rem .35rem;
+  font-size: .6rem;
+}
+
+@media (min-width: 768px) {
+  .tw-badge {
+    @apply tw-py-1 tw-px-2 tw-text-xs;
+  }
+}
+
+@each $color in $colors {
+  .tw-badge-#{$color} {
+    @if($color != 'light' and $color != 'dark') {
+      @apply tw-bg-#{$color}-lighter tw-text-#{$color}-darker;
+    }
+
+    @if($color == 'light') {
+      @apply tw-bg-grey-lighter tw-text-grey-darker;
+    }
+
+    @if($color == 'dark') {
+      @apply tw-bg-grey-darker tw-text-grey-lighter;
+    }
+  }
+}

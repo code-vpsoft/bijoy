@@ -1,0 +1,364 @@
+/* start: Generic */
+.tw-field {
+  @apply tw-w-full;
+}
+
+.tw-label {
+  @apply tw-block tw-tracking-wide tw-text-grey-darker;
+}
+
+.tw-control {
+  @apply tw-relative;
+}
+
+.tw-icon {
+  @apply tw-absolute tw-pin-t tw-text-grey-dark tw-pointer-events-none;
+}
+
+.tw-help { }
+/* end: Generic */
+
+/* start: Inputs - input, textarea, select */
+.tw-input {
+  @apply tw-bg-grey-lighter tw-block tw-w-full tw-appearance-none tw-text-grey-darker tw-leading-tight;
+
+  &:focus {
+    @apply  tw-outline-none tw-bg-white border-grey;
+  }
+}
+/* end: Inputs */
+
+/* start: Checkbox & Radio */
+.tw-checkbox,
+.tw-radio {
+  @apply tw-flex items-center;
+}
+/* end: Checkbox & Radio */
+
+.tw-file {
+  @apply tw-bg-grey-lighter tw-block tw-w-full tw-appearance-none tw-text-grey-darker tw-leading-tight tw-relative tw-overflow-hidden;
+
+  input {
+    @apply tw-w-full tw-h-full tw-opacity-0;
+  }
+
+}
+
+.tw-file-meta {
+  @apply tw-flex tw-w-full tw-h-full tw-items-center tw-absolute tw-pin-t tw-pin-l tw-pointer-events-none;
+}
+
+.tw-file-name {
+  @apply tw-bg-white tw-flex tw-flex-1 tw-h-full tw-mb-0 tw-items-center tw-overflow-x-hidden;
+}
+
+/* start: Modifiers */
+@each $color in $colors {
+  .tw-is-#{$color} {
+    .tw-input,
+    .tw-file,
+    .tw-file-name {
+      @if($color != 'light' and $color != 'dark') {
+        @apply tw-border-#{$color};
+      }
+
+      @if($color == 'light') {
+        @apply tw-border-grey-lighter;
+      }
+
+      @if($color == 'dark') {
+        @apply tw-border-grey-darker;
+      }
+    }
+
+    .tw-help {
+      @if($color != 'light' and $color != 'dark') {
+        @apply tw-text-#{$color};
+      }
+
+      @if($color == 'light') {
+        @apply tw-text-grey;
+      }
+
+      @if($color == 'dark') {
+        @apply tw-text-grey-darker;
+      }
+    }
+  }
+}
+
+/* Input sm */
+.tw-is-sm {
+  &.tw-field {
+    @apply tw-mb-2;
+  }
+
+  .tw-label {
+    @apply tw-mb-1 tw-text-sm;
+
+    &.tw-uppercase {
+      font-size: .6rem;
+    }
+  }
+  .tw-input {
+    @apply tw-px-2 tw-py-1 tw-mb-1 tw-text-sm;
+  }
+
+  .tw-icon {
+    @apply tw-px-2 tw-py-1 tw-text-sm;
+  }
+
+  .tw-arrow-down{
+    font-size: 0.75rem;
+
+    padding-top: 0.45rem;
+    padding-bottom: 0.45rem;
+  }
+
+  .tw-has-icon-left {
+    .tw-input {
+      @apply tw-pl-6;
+    }
+  }
+
+  .tw-has-icon-right {
+    .tw-input {
+      @apply tw-pr-6;
+    }
+  }
+
+  .tw-help {
+    font-size: 0.6rem;
+  }
+
+  .tw-file {
+    @apply tw-mb-1;
+
+    height: 1.75rem;
+    font-size: 0.75rem;
+  }
+
+  .tw-file-meta {
+    @apply tw-pl-2;
+  }
+
+  .tw-file-label {
+    @apply tw-pl-2 tw-pr-2;
+  }
+
+  .tw-file-name {
+    @apply tw-px-2;
+  }
+}
+
+/* Input md */
+.tw-is-md {
+  &.tw-field {
+    @apply tw-mb-3;
+  }
+
+  .tw-label {
+    @apply tw-mb-1;
+
+    &.tw-uppercase {
+      @apply tw-text-xs;
+    }
+  }
+
+  .tw-input {
+    @apply tw-mb-2 tw-py-2 tw-px-3;
+  }
+
+  .tw-icon {
+    @apply tw-px-3 tw-text-lg;
+
+    padding-top: 0.54rem;
+    padding-bottom: 0.54rem;
+  }
+
+  .tw-arrow-down{
+    font-size: 0.75rem;
+
+    padding-top: 0.8rem;
+    padding-bottom: 0.8rem;
+  }
+
+  .tw-has-icon-left {
+    .tw-input {
+      @apply tw-pl-8;
+    }
+  }
+
+  .tw-has-icon-right {
+    .tw-input {
+      @apply tw-pr-8;
+    }
+  }
+
+  .tw-help {
+    @apply tw-text-xs;
+  }
+
+  .tw-file {
+    @apply tw-mb-2 tw-h-10;
+  }
+
+  .tw-file-meta {
+    @apply tw-pl-3;
+  }
+
+  .tw-file-label {
+    @apply  tw-pr-3 tw-pl-2;
+  }
+
+  .tw-file-name {
+    @apply tw-px-3;
+  }
+}
+
+/* Input lg */
+.tw-is-lg {
+  &.tw-field {
+    @apply tw-mb-4;
+  }
+
+  .tw-label {
+    @apply tw-mb-2 tw-text-lg;
+
+    &.tw-uppercase {
+      font-size: 0.85rem;
+    }
+  }
+  .tw-input {
+    @apply tw-px-3 tw-mb-2 tw-text-lg;
+
+    padding-top: 0.6rem;
+    padding-bottom: 0.6rem;
+  }
+
+  .tw-icon {
+    @apply tw-px-4;
+
+    padding-top: 0.7rem;
+    padding-bottom: 0.7rem;
+    font-size: 1.25rem;
+  }
+
+  .tw-arrow-down{
+    font-size: 1rem;
+
+    padding-top: 0.95rem;
+    padding-bottom: 0.95rem;
+  }
+
+  .tw-has-icon-left {
+    .tw-input {
+      @apply tw-pl-10;
+    }
+  }
+
+  .tw-has-icon-right {
+    .tw-input {
+      @apply tw-pr-10;
+    }
+  }
+
+  .tw-help {
+    font-size: 0.85rem;
+  }
+
+  .tw-file {
+    @apply tw-mb-2 tw-h-12;
+
+    font-size: 1.15rem;
+  }
+
+  .tw-file-meta {
+    @apply tw-pl-4;
+  }
+
+  .tw-file-label {
+    @apply  tw-pr-4 tw-pl-3;
+  }
+
+  .tw-file-name {
+    @apply tw-px-4;
+  }
+}
+
+/* Input xl */
+.tw-is-xl {
+  &.tw-field {
+    @apply tw-mb-5;
+  }
+
+  .tw-label {
+    @apply tw-mb-2;
+    font-size: 1.25rem;
+
+    &.tw-uppercase {
+      font-size: 1rem;
+    }
+  }
+  .tw-input {
+    @apply tw-px-4 tw-py-3 tw-mb-2;
+
+    font-size: 1.25rem;
+  }
+
+  .tw-icon {
+    @apply tw-px-4 tw-py-3;
+
+    font-size: 1.5rem;
+  }
+
+  .tw-arrow-down{
+    font-size: 1.25rem;
+
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  .tw-has-icon-left {
+    .tw-input {
+      @apply tw-pl-12;
+    }
+  }
+
+  .tw-has-icon-right {
+    .tw-input {
+      @apply tw-pr-12;
+    }
+  }
+
+  .tw-help {
+    font-size: 1rem;
+  }
+
+  .tw-file {
+    @apply tw-mb-2;
+
+    height: 3.25rem;
+    font-size: 1.25rem;
+  }
+
+  .tw-file-meta {
+    @apply tw-pl-4;
+  }
+
+  .tw-file-label {
+    @apply  tw-pr-5 tw-pl-4;
+  }
+
+  .tw-file-name {
+    @apply tw-px-5;
+  }
+}
+
+.tw-checkbox,
+.tw-radio {
+  .tw-label {
+    @apply tw-mb-0;
+  }
+}
+/* end: Modifiers */

@@ -1,0 +1,21 @@
+.tw-progress-bar {
+  @apply tw-bg-grey-light tw-text-white tw-overflow-hidden;
+
+  appearance: none;
+}
+
+@each $color in $colors {
+  .tw-progress-fill-#{$color} {
+    @if($color != 'light' and $color != 'dark') {
+      @apply tw-bg-#{$color} tw-px-2 tw-py-1;
+    }
+
+    @if($color == 'light') {
+      @apply tw-bg-white tw-text-grey-darker tw-px-2 tw-py-1;
+    }
+
+    @if($color == 'dark') {
+      @apply tw-bg-black tw-px-2 tw-py-1;
+    }
+  }
+}

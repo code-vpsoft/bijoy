@@ -1,0 +1,32 @@
+/**
+ * Bijoy - CSS Framework based on Tailwind
+ * Author: vpsoft
+ * Author URI: https://vpsoft.org
+ * Version: 1.0.1
+ */
+
+
+@import url('https://fonts.googleapis.com/css?family=Vollkorn');
+
+@tailwind preflight;
+
+@tailwind components;
+
+@import "components/variables";
+@import "components/mixin";
+@import "components/anim";
+@import "components/typography";
+@import "components/sticky";
+@import "components/tooltip";
+@import "components/alert";
+@import "components/close";
+@import "components/button";
+@import "components/badge";
+@import "components/breadcrumb";
+@import "components/progress-bar";
+@import "components/spin";
+@import "components/modal";
+@import "components/table";
+@import "components/form";
+
+@tailwind utilities;

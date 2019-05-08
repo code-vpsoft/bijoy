@@ -1,0 +1,25 @@
+.tw-modal {
+  @apply tw-sticky-screen tw-flex tw-flex-col tw-items-center tw-justify-center;
+
+  @include animation(tw-fade-in 200ms linear 1);
+}
+
+.tw-modal-bg {
+  @apply tw-bg-grey-light tw-w-full tw-h-full tw-absolute tw-opacity-75;
+}
+
+.tw-modal-content {
+  @apply tw-bg-white tw-flex tw-flex-col tw-max-h-full tw-m-4 tw-shadow-lg tw-rounded tw-relative tw-overflow-x-hidden tw-overflow-y-auto;
+}
+
+.tw-modal-header {
+  @apply tw-py-3 tw-px-4 tw-border-b tw-font-semibold;
+}
+
+.tw-modal-body {
+  @apply tw-flex-1 tw-py-3 tw-px-4;
+}
+
+.tw-modal-footer {
+  @apply tw-flex tw-py-3 tw-px-4 tw-border-t;
+}

@@ -1,0 +1,23 @@
+{
+    "name": "vpsoft/bijoy",
+    "description": "Laravel custom preset using Tailwind and Vue",
+    "keywords": ["vpsoft", "Laravel", "Tailwind", "Vue"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "vpsoft",
+            "email": "contact@vpsoft.org"
+        }
+    ],
+    "minimum-stability": "stable",
+    "autoload": {
+        "psr-4": {
+            "Vpsoft\\Bijoy\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": ["Vpsoft\\Bijoy\\BijoyServiceProvider"]
+        }
+    }
+}

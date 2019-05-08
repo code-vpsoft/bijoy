@@ -1,0 +1,15 @@
+@each $color in $colors {
+  .tw-alert-#{$color} {
+    @if($color != 'light' and $color != 'dark') {
+      @apply tw-bg-#{$color}-lighter tw-border-#{$color}-light tw-text-#{$color}-darker tw-px-3 tw-py-3 tw-relative;
+    }
+
+    @if($color == 'light') {
+      @apply tw-bg-grey-lighter tw-border-grey-light tw-text-grey-darker tw-px-3 tw-py-3 tw-relative;
+    }
+
+    @if($color == 'dark') {
+      @apply tw-bg-grey-darker tw-border-grey-dark tw-text-grey-lighter tw-px-3 tw-py-3 tw-relative;
+    }
+  }
+}
