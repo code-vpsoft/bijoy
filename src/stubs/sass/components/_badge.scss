@@ -12,7 +12,7 @@
 @each $color in $colors {
   .tw-badge-#{$color} {
     @if($color != 'light' and $color != 'dark') {
-      @apply tw-bg-#{$color}-lighter tw-text-#{$color}-darker;
+      @apply tw-bg-#{$color} tw-text-white;
     }
 
     @if($color == 'light') {
@@ -20,7 +20,7 @@
     }
 
     @if($color == 'dark') {
-      @apply tw-bg-grey-darker tw-text-grey-lighter;
+      @apply tw-bg-black tw-text-white;
     }
   }
 }
