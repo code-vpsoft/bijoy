@@ -12,18 +12,18 @@
         document.createStyleSheet = (function() {
             function createStyleSheet(href) {
                 if(typeof href !== 'undefined') {
-                    var element = document.createElement('link');
+                    let element = document.createElement('link');
                     element.type = 'text/css';
                     element.rel = 'stylesheet';
                     element.href = href;
                 }
                 else {
-                    var element = document.createElement('style');
+                    let element = document.createElement('style');
                     element.type = 'text/css';
                 }
 
                 document.getElementsByTagName('head')[0].appendChild(element);
-                var sheet = document.styleSheets[document.styleSheets.length - 1];
+                let sheet = document.styleSheets[document.styleSheets.length - 1];
 
                 if(typeof sheet.addRule === 'undefined')
                     sheet.addRule = addRule;

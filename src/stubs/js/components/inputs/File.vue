@@ -5,7 +5,7 @@
 
         <div class="tw-control">
             <div class="tw-file tw-border" :class="classForFile">
-                <input :id="name" :name="name" type="file" ref="file" :multiple="isMultiple" @click="reset"  @change="onChange">
+                <input :id="name" :name="name" type="file" ref="file" :required="isRequired" :multiple="isMultiple" @click="reset"  @change="onChange">
 
                 <div class="tw-file-meta">
                     <i class="icon ion-upload"></i>
@@ -37,10 +37,15 @@
             name: { required: true },
             label: { default: '' },
             placeholder: { default: 'Choose a file' },
+            isRequired: { default: false },
             isMultiple: { default: false },
             classForFile: { default: '' },
             maxFileName: { default: 2 },
             error: { default: '' },
+        },
+
+        components: {
+            NavLeftItem
         },
 
         data() {

@@ -12,15 +12,28 @@
             offsetPlusTop: { default: 0 }
         },
 
+        methods: {
+            notifyParent(isPinned) {
+                this.$parent.$emit('pin-change', isPinned);
+            }
+        },
+
         mounted() {
-            let el = this.$el;
-            let originalOffsetTop = el.offsetTop + this.offsetPlusTop;
+            let $this = this,
+                el = $this.$el,
+                originalOffsetTop = el.offsetTop + this.offsetPlusTop;
 
             window.addEventListener('scroll',
                 throttle( function() {
-                    el.classList[
-                        window.scrollY >= originalOffsetTop ? 'add' : 'remove'
-                    ]('tw-sticky-top');
+                    if( window.scrollY >= originalOffsetTop ) {
+                        el.classList.add('tw-sticky-top');
+
+                        $this.notifyParent(true);
+                    } else {
+                        el.classList.remove('tw-sticky-top');
+
+                        $this.notifyParent(false);
+                    }
                 }, 300)
             );
         }

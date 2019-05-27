@@ -1,5 +1,5 @@
 <template>
-    <ul class="slide-menu tw-list-reset tw-flex tw-flex-col">
+    <ul class="tw-list-reset tw-flex tw-flex-col">
         <slot></slot>
     </ul>
 </template>
@@ -7,7 +7,9 @@
 <script>
     export default {
         data() {
-            return { items: [] };
+            return {
+                items: []
+            };
         },
 
         mounted() {

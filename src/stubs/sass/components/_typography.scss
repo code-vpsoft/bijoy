@@ -9,7 +9,7 @@
 }
 
 html {
-  @apply tw-font-vollkorn tw-font-normal tw-text-base tw-text-black;
+  @apply tw-font-vollkorn tw-font-normal tw-text-base tw-text-grey-darker;
 
   @include animation(tw-fade-in 400ms);
 }
@@ -20,10 +20,6 @@ p {
 
 a {
   @apply tw-text-primary tw-no-underline;
-
-  &:visited {
-    @apply tw-text-primary-darker;
-  }
 
   &:hover {
     @apply tw-text-primary-dark;
@@ -47,7 +43,7 @@ a {
       }
 
       @if($color == 'dark') {
-        @apply tw-text-black;
+        @apply tw-text-grey-darker;
       }
     }
   }

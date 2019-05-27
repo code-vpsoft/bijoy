@@ -31,3 +31,12 @@
 
 @tailwind utilities;
 
+.tw-box-float {
+  @apply tw-bg-white tw-w-64 tw-p-3 tw-border tw-shadow-md tw-absolute tw-pin-r tw-pin-t tw-z-50;
+}
+
+@screen md {
+  .md\:tw-pr-sidebar-w.tw-sticky-top {
+    @apply tw-pr-64;
+  }
+}

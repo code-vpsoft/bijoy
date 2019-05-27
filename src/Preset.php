@@ -20,6 +20,8 @@ class Preset extends ConsolePreset
 
         static::updateLayoutDirectory();
 
+        static::updateAdminDirectory();
+
         static::updatePackages();
 
         static::updateMix();
@@ -57,18 +59,30 @@ class Preset extends ConsolePreset
 
     public static function updateLayoutDirectory()
     {
+        File::cleanDirectory(resource_path('views/layouts'));
+
         File::copyDirectory(__DIR__.'/stubs/layouts', resource_path('views/layouts'));
+    }
+
+    public static function updateAdminDirectory()
+    {
+        File::cleanDirectory(resource_path('views/admin'));
+
+        File::copyDirectory(__DIR__.'/stubs/admin', resource_path('views/admin'));
     }
 
     public static function updatePackageArray($packages)
     {
         return array_merge(
             [
+                "js-cookie" => "^2.2.0",
+                "simplebar" => "^4.0.0-alpha.7",
                 "tailwindcss" => "^0.7.4",
                 "tailwindcss-plugins" => "^0.1.4",
-                "simplebar" => "^4.0.0-alpha.7",
                 "tooltip.js" => "^1.3.2",
-                "vue-template-compiler" => "^2.6.10"
+                "v-click-outside" => "^2.1.1",
+                "vue-template-compiler" => "^2.6.10",
+                "swiper" => "^4.5.0"
             ],
             Arr::except($packages, [
                 'bootstrap',
@@ -86,6 +100,7 @@ class Preset extends ConsolePreset
     public static function updateTailwindJs()
     {
         copy(__DIR__.'/stubs/tailwind.js', base_path('tailwind.js'));
+        copy(__DIR__.'/stubs/tailwind-admin.js', base_path('tailwind-admin.js'));
     }
 
     public static function copyRepoList()
